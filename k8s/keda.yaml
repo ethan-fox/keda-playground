@@ -1,0 +1,17 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: keda-playground-scaledobject
+spec:
+  scaleTargetRef:
+    name: hello-world-app-deployment
+  minReplicaCount: 0
+  maxReplicaCount: 10
+  cooldownPeriod: 5  # seconds
+  pollingInterval: 5  # seconds
+  triggers:
+    - type: metrics-api
+      metadata:
+        url: "http://metrics-api-service.default.svc.cluster.local:7051/value"
+        valueLocation: "stuff"
+        targetValue: "2.0"
