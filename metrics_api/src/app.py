@@ -13,7 +13,7 @@ value = {
 
 @app.get("/value")
 async def get_value():
-    logger.info(f"Returning value: '{value}'")
+    print(f"Returning value: '{value}'")
     return value
 
 
@@ -21,4 +21,4 @@ async def get_value():
 async def set_value(request_value: dict):
     global value
     value = request_value
-    logger.info(f"Value set to '{value}'")
+    print(f"Value set to '{value}'")
