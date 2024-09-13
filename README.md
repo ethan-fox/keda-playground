@@ -3,7 +3,6 @@
 
 ## TODO (priorities)
 
-* STATE MANAGEMENT - when you POST it should persist in the GET. idk what is going on
 * Port forwarding vs. NodePort (LoadBalancer?)
 * Overriding metrics-api (image)
 * Condense READMEs
